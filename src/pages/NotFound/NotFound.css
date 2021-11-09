@@ -1,0 +1,25 @@
+.not-found {
+    color: maroon;
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+.not-found span, h1 {
+    font-size: 100px;
+    font-weight: 800px;
+}
+.first-four {
+    color: blue;
+}
+.zero {
+    color: crimson;
+}
+.last-four {
+    color: magenta;
+}
+.not-found button {
+    background-color: teal;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+}

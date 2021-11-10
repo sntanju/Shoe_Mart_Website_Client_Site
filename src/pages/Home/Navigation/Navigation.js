@@ -5,7 +5,7 @@ import './Navigation.css';
 
 const Navigation = () => {
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sm={12} xs={12}>
             <Container>
                 
                 <Navbar.Brand ><img className= "logo" src="https://www.designfreelogoonline.com/wp-content/uploads/2021/02/000764-Shoes-02.png" alt="" /></Navbar.Brand>
@@ -18,7 +18,7 @@ const Navigation = () => {
 
                     <Nav className="link-style">
                         <NavLink to="/home">Home</NavLink>
-                        <NavLink to="/services">Services</NavLink>
+                        <NavLink to="/allproducts">Products</NavLink>
                         <NavLink to="/login">Login</NavLink>
                         <NavLink to="/register">Register</NavLink>
                         <NavLink to="/login">Login</NavLink>

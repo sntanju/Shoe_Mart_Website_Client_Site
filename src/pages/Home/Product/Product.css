@@ -1,0 +1,20 @@
+.product {
+    margin: 15px;
+    padding: 5px;
+    border: 1px solid white;
+    border-radius: 10px;
+    color:midnightblue;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.596);
+}
+.product:hover{
+    background-color:rgba(85, 107, 47, 0.534);
+    color: white;
+    
+}
+.product button {
+    background-color:darkcyan;
+    color: white;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+}

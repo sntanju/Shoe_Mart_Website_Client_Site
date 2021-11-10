@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import Product from '../Product/Product';
-import './Products.css';
+import AllProduct from '../AllProduct/AllProduct';
+import './AllProducts.css';
 
-const Products = () => {
+const AllProducts = () => {
 
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('./products.json')
+        fetch('../products.json')
         .then(res => res.json())
         .then(data => setProducts(data))
     } ,[]);
@@ -15,17 +15,17 @@ const Products = () => {
 
     return (
         <div>
-            <h2 className="our-product">Our Products</h2>
-            <div className="products">
+            <h2 className=" bg-info m-0 p-3 text-light">All Of Our Products</h2>
+            <div className="all-products">
                 {
-                        products.map(product => <Product
+                        products.map(product => <AllProduct
                         key = {product.id}
                         product={product}
-                        ></Product>)
+                        ></AllProduct>)
                 }
             </div>
         </div>
     );
 };
 
-export default Products;
+export default AllProducts;

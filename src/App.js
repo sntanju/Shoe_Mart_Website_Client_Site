@@ -6,6 +6,7 @@ import Footer from './pages/Home/Footer/Footer';
 import Register from './pages/Login/Register/Register';
 import Login from './pages/Login/Login/Login';
 import NotFound from './pages/NotFound/NotFound';
+import AllProducts from './pages/AllProducts/AllProducts';
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
           </Route>
           <Route exact path="/home">
               <Home></Home>
+          </Route>
+          <Route exact path="/allproducts">
+              <AllProducts></AllProducts>
           </Route>
           <Route exact path="/login">
               <Login></Login>

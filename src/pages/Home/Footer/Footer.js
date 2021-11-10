@@ -16,18 +16,18 @@ const Footer = () => {
         const whatsappIcon = <FontAwesomeIcon icon={faWhatsapp} />
 
     return (
-        <div>
+        
             <Container fluid>
             <Row className="footer">
 
-                <Col sm>
+                <Col lg={3} md={6} sm={12} xs={12}>
                 <br />
-                    <h3>Shoe Mart</h3> 
-                    <hr />
+                    <h3><img className= "logo" src="https://www.designfreelogoonline.com/wp-content/uploads/2021/02/000764-Shoes-02.png" alt="" />Shoe Mart</h3> 
+                    
                     <p>We supplys worlds most beautiful and top class shoes to the people as their need and expection.So, youcan come here and choose the best shoe for you.</p>   
                 </Col>
 
-                <Col sm>
+                <Col lg={2} md={6} sm={12} xs={12}>
                 <br />
                     <h3>Follow</h3>
                     <hr />
@@ -37,7 +37,7 @@ const Footer = () => {
                     <p> {twitterIcon} Twitter</p>                
                 </Col>
             
-                <Col sm>
+                <Col lg={3} md={6} sm={12} xs={12}>
                 <br />
                     <h3>Contact</h3>
                     <hr />
@@ -47,7 +47,7 @@ const Footer = () => {
                     <p>{messangerIcon}  Message: ShoeMart@smt.com</p>  
                 </Col>
 
-                <Col sm>
+                <Col lg={2} md={6} sm={12} xs={12}>
                 <br />
                     <h3>Legal</h3>
                     <hr />
@@ -56,7 +56,7 @@ const Footer = () => {
                     <p>Policy</p>
                 </Col>
 
-                <Col sm>
+                <Col lg={2} md={6} sm={12} xs={12}>
                 <br />
                     <h3>Visit</h3>
                     <hr />
@@ -67,7 +67,7 @@ const Footer = () => {
                 <p  className="footer-text">Copyright warning &copy; 2021 Shoe Mart</p>
             </Row>
             </Container>
-        </div>
+       
     );
 };
 

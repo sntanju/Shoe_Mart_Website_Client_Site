@@ -1,0 +1,15 @@
+.register {   
+    margin: 30px 450px ;
+    padding: 20px;
+    border: 1px solid gray;
+}
+.register input {
+    margin: 10px;
+}
+.register-button {
+    background-color:rgba(0, 0, 128, 0.753);
+    color: white;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}

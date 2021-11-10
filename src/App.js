@@ -7,6 +7,8 @@ import Register from './pages/Login/Register/Register';
 import Login from './pages/Login/Login/Login';
 import NotFound from './pages/NotFound/NotFound';
 import AllProducts from './pages/AllProducts/AllProducts';
+import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
+import ProductDetails from './pages/ProductDetails/ProductDetails';
 
 function App() {
   return (
@@ -23,6 +25,9 @@ function App() {
           <Route exact path="/allproducts">
               <AllProducts></AllProducts>
           </Route>
+          <PrivateRoute to="/details/:id">
+            <ProductDetails></ProductDetails>
+          </PrivateRoute>
           <Route exact path="/login">
               <Login></Login>
           </Route>

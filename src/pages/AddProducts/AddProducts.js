@@ -10,10 +10,10 @@ const AddProducts = () => {
 
     const onSubmit = data => {
         console.log(data);
-        axios.post('https://frozen-ravine-97726.herokuapp.com/products', data)
+        axios.post('https://frozen-ravine-97726.herokuapp.com/reviews', data)
         .then(res => {
             if(res.data.insertedId) {
-                alert('Added Products Sucessfully');
+                alert('Your Reviews Added Sucessfully');
                 reset();
             }
         })
@@ -29,12 +29,11 @@ const AddProducts = () => {
         <div className="add-service">
             <h3 className="text-danger m-2 p-2">Add A Service</h3>
             <form onSubmit={handleSubmit(onSubmit)}>
-                    <input {...register("img")} placeholder="Image" />
-                    <input {...register("name")} placeholder="Service" />
+                    <input {...register("img")} placeholder="Your Image" />
+                    <input {...register("name")} placeholder="Your Name" />
                     <input {...register("description")} placeholder="Description" />
-                    <input type="number" {...register("price")} placeholder="Price" />
                         <br />
-                    <input type="submit" placeholder="Add"/>
+                    <input type="submit" placeholder="Review"/>
                 </form>
 
         </div>

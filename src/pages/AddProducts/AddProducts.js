@@ -10,7 +10,7 @@ const AddProducts = () => {
 
     const onSubmit = data => {
         console.log(data);
-        axios.post('http://localhost:5000/products', data)
+        axios.post('https://frozen-ravine-97726.herokuapp.com/products', data)
         .then(res => {
             if(res.data.insertedId) {
                 alert('Added Products Sucessfully');
@@ -20,7 +20,7 @@ const AddProducts = () => {
     }
 
     useEffect( () => {
-        fetch('http://localhost:5000/products')
+        fetch('https://frozen-ravine-97726.herokuapp.com/products')
         .then(res => res.json())
         .then(data => setDetails(data))
     }, []);

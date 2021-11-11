@@ -7,7 +7,7 @@ const Product = ({product}) => {
     const {id, description, name, img, price} = product || {};
     const history = useHistory();
     const handleDetails = (id) => {
-        const uri = `/details/${id}`;
+        const uri = `/productdetails/${id}`;
         history.push(uri);
     }
 

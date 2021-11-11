@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 //import axios from 'axios';
 import useAuth from '../../hooks/useAuth';
 import { useParams } from 'react-router';
-// import { useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 
 const ProductDetails = () => {
     const {users} = useAuth();
@@ -10,7 +10,7 @@ const ProductDetails = () => {
     const [details, setDetails] = useState([]);
     const [singleDetails, setSingleDetails] = useState({});
 
-    //const { register, handleSubmit, reset } = useForm();
+    const { register, handleSubmit, reset } = useForm();
 
     // const onSubmit = data => {
     //     console.log(data);
@@ -24,7 +24,7 @@ const ProductDetails = () => {
     // }
 
     useEffect( () => {
-        fetch('./products.json/services')
+        fetch('./products.json')
         .then(res => res.json())
         .then(data => setDetails(data))
     }, []);
@@ -55,10 +55,10 @@ const ProductDetails = () => {
                 <div className="input-form">
                 {/* <form onSubmit={handleSubmit(onSubmit)}> */}
                 <form>
-                    {/* <input {...register("name")} placeholder=" Name" />
+                    <input {...register("name")} placeholder=" Name" />
                     <input {...register("address")} placeholder="Address" />
                     <input {...register("product")} placeholder="Product Name" />
-                    <input type="number" {...register("phone")} placeholder="Phone" /> */}
+                    <input type="number" {...register("phone")} placeholder="Phone" />
                         <br />
                     <input type="submit" placeholder="Buy"/>
                 </form>

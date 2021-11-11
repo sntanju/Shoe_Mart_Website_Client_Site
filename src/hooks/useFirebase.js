@@ -1,4 +1,4 @@
-import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
+import { getAuth, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initializeAuthentication from "../pages/Login/firebase/firebase.init";
 
@@ -6,38 +6,80 @@ import initializeAuthentication from "../pages/Login/firebase/firebase.init";
 initializeAuthentication();
 
 const useFirebase = () => {
-    const [users, setUsers] = useState({});
-    const [loading, setLoading] = useState(true);
+    const [user, setUser] = useState({});
+    const [isLoading, setIsLoading] = useState(true);
+    const [authError, setAuthError] = useState('');
 
     const auth = getAuth();
 
-    
+    const registerUser = (email, password, name, history) => {
+        setIsLoading(true);
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                setAuthError('');
+                const newUser = { email, displayName: name };
+                setUser(newUser);
+                // send name to firebase after creation
+                updateProfile(auth.currentUser, {
+                    displayName: name
+                }).then(() => {
+                }).catch((error) => {
+                });
+                history.replace('/');
+            })
+            .catch((error) => {
+                setAuthError(error.message);
+                console.log(error);
+            })
+            .finally(() => setIsLoading(false));
+    }
 
-    useEffect( () => {
-        const unsubscribed = onAuthStateChanged(auth, users => {
-            if(users) {
-                setUsers(users);
+    const loginUser = (email, password, location, history) => {
+        setIsLoading(true);
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                const destination = location?.state?.from || '/';
+                history.replace(destination);
+                setAuthError('');
+            })
+            .catch((error) => {
+                setAuthError(error.message);
+            })
+            .finally(() => setIsLoading(false));
+    }
+
+    // observer user state
+    useEffect(() => {
+        const unsubscribed = onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setUser(user);
+            } else {
+                setUser({})
             }
-            else {
-                setUsers({})
-            }
-            setLoading(false);
+            setIsLoading(false);
         });
         return () => unsubscribed;
-    },[]);
+    }, [])
 
-    const logOut = () => {
-        setLoading(true);
-        signOut(auth)
-        .then(() => {})
-         .finally(() => setLoading(false));
+    const logout = () => {
+        setIsLoading(true);
+        signOut(auth).then(() => {
+            // Sign-out successful.
+        }).catch((error) => {
+            // An error happened.
+        })
+            .finally(() => setIsLoading(false));
     }
 
     return {
-        users,
-        loading,
-        logOut
+        user,
+        isLoading,
+        authError,
+        registerUser,
+        loginUser,
+        logout,
     }
 }
+
 
 export default useFirebase;

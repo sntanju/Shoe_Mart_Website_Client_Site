@@ -9,10 +9,13 @@ import NotFound from './pages/NotFound/NotFound';
 import AllProducts from './pages/AllProducts/AllProducts';
 import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
+import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
+import AuthProvider from './contexts/AuthProvider';
 
 function App() {
   return (
     <div className="App">
+      <AuthProvider>
       <Router>
         <Navigation></Navigation>
         <Switch>
@@ -25,21 +28,26 @@ function App() {
           <Route exact path="/allproducts">
               <AllProducts></AllProducts>
           </Route>
-          <PrivateRoute to="/details/:id">
-            <ProductDetails></ProductDetails>
-          </PrivateRoute>
+          
           <Route exact path="/login">
               <Login></Login>
           </Route>
           <Route exact path="/register">
               <Register></Register>
           </Route>
+          <PrivateRoute to="/dashboard">
+            <Dashboard></Dashboard>
+          </PrivateRoute>
+          <PrivateRoute to="/productdetails/:id">
+            <ProductDetails></ProductDetails>
+          </PrivateRoute>
           <Route exact path="*">
               <NotFound></NotFound>
           </Route>
         </Switch>
         <Footer></Footer>
       </Router>
+      </AuthProvider>
     </div>
   );
 }

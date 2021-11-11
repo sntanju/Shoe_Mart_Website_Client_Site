@@ -5,9 +5,10 @@ import './Products.css';
 const Products = () => {
 
     const [products, setProducts] = useState([]);
+    const size = 6;
 
     useEffect(() => {
-        fetch('./products.json')
+        fetch(`http://localhost:5000/products?size=${size}`)
         .then(res => res.json())
         .then(data => setProducts(data))
     } ,[]);

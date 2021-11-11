@@ -1,0 +1,11 @@
+.review {
+    margin: 15px;
+    padding: 5px;
+    border: 1px solid white;
+    border-radius: 10px;
+    color:midnightblue;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.596);
+}
+.review:hover{
+    background-color:rgba(255, 235, 205, 0.692);
+}

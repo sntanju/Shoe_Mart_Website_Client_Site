@@ -15,7 +15,7 @@ const ProductDetails = () => {
 
     const onSubmit = data => {
         console.log(data);
-        axios.post('https://spooky-werewolf-89746.herokuapp.com/productDetails', data)
+        axios.post('https://frozen-ravine-97726.herokuapp.com/productDetails', data)
         .then(res => {
             if(res.data.insertedId) {
                 alert('Ordered Sucessfully');

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 
 
-const AddProducts = () => {
+const AddReviews = () => {
 
     const [details, setDetails] = useState([]);   
     const { register, handleSubmit, reset } = useForm();
@@ -20,7 +20,7 @@ const AddProducts = () => {
     }
 
     useEffect( () => {
-        fetch('https://frozen-ravine-97726.herokuapp.com/products')
+        fetch('https://frozen-ravine-97726.herokuapp.com/reviews')
         .then(res => res.json())
         .then(data => setDetails(data))
     }, []);
@@ -40,4 +40,4 @@ const AddProducts = () => {
     );
 };
 
-export default AddProducts;
+export default AddReviews;

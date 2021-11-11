@@ -1,0 +1,21 @@
+.facilities {
+    padding: 20px;
+    margin: 30px;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.596);
+    border-radius: 10px;
+}
+.facility {
+    display: grid;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.facility p {   
+    font-size: 30px;
+}
+.single-facility {
+    border: 1px solid black;
+    margin: 10px;
+    padding: 15px;
+}

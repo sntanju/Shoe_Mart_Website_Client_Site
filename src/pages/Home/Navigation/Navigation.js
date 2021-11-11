@@ -27,7 +27,7 @@ const Navigation = () => {
                         <NavLink to="/register">Register</NavLink>
                         <NavLink to="/dashboard">Dashboard</NavLink>
                         {user?.email ? 
-                        <button className="login-button" onClick={logout}>LogOut</button>: 
+                        <button className="bg-info link-style" onClick={logout}>LogOut</button>: 
                         <NavLink className="bg-info link-style" to="/login">Login</NavLink> 
                         }
                             <Navbar.Text>

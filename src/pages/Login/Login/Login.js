@@ -35,18 +35,20 @@ const Login = () => {
 
                 <label htmlFor="password">Your Password:</label>
                 <input onBlur={handleOnChange} type="password" name="password" required/>
-                <br /><br />
+                <br />
+                {isLoading && <Spinner animation="border" varient='success' />} <br/>
+                {user?.email && 
+                <Alert variant="success">
+                Login Successfully!!
+                </Alert>}
+                {authError && <Alert variant="danger">{authError}</Alert>}
                 <button className="login-button" type='submit'>Login</button>
             </form>
-            <br /><br /><br />
-            <NavLink to="/register"><button className="login-button" >Don't have an account? Register</button></NavLink>
 
-            {isLoading && <Spinner animation="border" varient='success' />}
-                        {user?.email && 
-                        <Alert variant="success">
-                        Login Successfully!!
-                      </Alert>}
-                        {authError && <Alert variant="danger">{authError}</Alert>}
+            <br/>
+            
+            <NavLink to="/register"><button className="login-button" >Don't have an account? Register</button></NavLink>
+                   
         </div>
     );
 };

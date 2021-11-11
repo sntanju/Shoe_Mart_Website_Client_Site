@@ -24,7 +24,7 @@ const ProductDetails = () => {
     // }
 
     useEffect( () => {
-        fetch('./products.json')
+        fetch('products.json')
         .then(res => res.json())
         .then(data => setDetails(data))
     }, []);

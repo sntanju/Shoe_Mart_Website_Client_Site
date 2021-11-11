@@ -45,6 +45,12 @@ const Register = () => {
                 <label htmlFor="password">Your Password:</label>
                 <input onBlur={handleOnBlur} type="password" name="password" required/>
                 <br /><br />
+                { isLoading && <Spinner animation="border" varient='success' /> } <br />
+                {user?.email && 
+                        <Alert variant="success">
+                        Register Successfully!!
+                        </Alert>}
+                        {authError && <Alert variant="danger">{authError}</Alert>}
 
                 <button type="submit" className="register-button">Register</button>
                 <br />
@@ -52,12 +58,7 @@ const Register = () => {
                 <br /> 
                 <NavLink to="/login"><button className="register-button">Already Registered? Login</button></NavLink>
             </form>
-            { isLoading && <Spinner animation="border" varient='success' /> }
-            {user?.email && 
-                        <Alert variant="success">
-                        Login Successfully!!
-                      </Alert>}
-                        {authError && <Alert variant="danger">{authError}</Alert>}
+            
         </div>
     );
 };

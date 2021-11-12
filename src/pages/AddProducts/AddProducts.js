@@ -5,7 +5,7 @@ import './AddProducts.css';
 
 const AddProducts = () => {
 
-    const [details, setDetails] = useState([]);   
+    const [products, setProducts] = useState([]);   
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {
@@ -22,7 +22,7 @@ const AddProducts = () => {
     useEffect( () => {
         fetch('https://frozen-ravine-97726.herokuapp.com/products')
         .then(res => res.json())
-        .then(data => setDetails(data))
+        .then(data => setProducts(data))
     }, []);
 
     return (

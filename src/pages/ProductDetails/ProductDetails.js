@@ -15,7 +15,7 @@ const ProductDetails = () => {
 
     const onSubmit = data => {
         console.log(data);
-        axios.post('https://frozen-ravine-97726.herokuapp.com/productDetails', data)
+        axios.post('https://frozen-ravine-97726.herokuapp.com/allOrders', data)
         .then(res => {
             if(res.data.insertedId) {
                 alert('Ordered Sucessfully');
@@ -61,7 +61,7 @@ const ProductDetails = () => {
                     <input {...register("product")} placeholder="Product Name" />
                     <input type="number" {...register("phone")} placeholder="Phone" />
                         <br />
-                    <input type="submit" placeholder="Buy"/>
+                    <input type="submit" placeholder="Order"/>
                 </form>
                 </div>
             </div>

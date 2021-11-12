@@ -23,11 +23,13 @@ const Navigation = () => {
                     <Nav className="link-style">
                         <NavLink to="/home">Home</NavLink>
                         <NavLink to="/allproducts">Products</NavLink>
-                        <NavLink to="/login">Login</NavLink>
                         <NavLink to="/register">Register</NavLink>
-                        <NavLink to="/dashboard">Dashboard</NavLink>
+                        
                         {user?.email ? 
-                        <button className="bg-info link-style" onClick={logout}>LogOut</button>: 
+                        <div className="m-2">
+                            <NavLink to="/dashboard">Dashboard</NavLink> 
+                            <button className="bg-info link-style" onClick={logout}>LogOut</button>
+                        </div> : 
                         <NavLink className="bg-info link-style" to="/login">Login</NavLink> 
                         }
                             <Navbar.Text>

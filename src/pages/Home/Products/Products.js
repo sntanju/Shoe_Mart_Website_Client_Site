@@ -5,10 +5,9 @@ import './Products.css';
 const Products = () => {
 
     const [products, setProducts] = useState([]);
-    const size = 6;
 
     useEffect(() => {
-        fetch(`https://frozen-ravine-97726.herokuapp.com/products?size=${size}`)
+        fetch('https://frozen-ravine-97726.herokuapp.com/products')
         .then(res => res.json())
         .then(data => setProducts(data))
     } ,[]);
@@ -19,7 +18,7 @@ const Products = () => {
             <h2 className="our-product">Our Latest Products</h2>
             <div className="products">
                 {
-                        products.map(product => <Product
+                        products.slice( 0, 6 ).map(product => <Product
                         key = {product.id}
                         product={product}
                         ></Product>)

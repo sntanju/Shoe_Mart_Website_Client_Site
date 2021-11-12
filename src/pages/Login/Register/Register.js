@@ -30,7 +30,7 @@ const Register = () => {
 
     return (
         <div className="register bg-success text-light">
-            <form onSubmit={handleLoginSubmit}>
+            { !isLoading && <form onSubmit={handleLoginSubmit}>
                 <h3>Please Register</h3>
                 <br />
 
@@ -44,20 +44,26 @@ const Register = () => {
 
                 <label htmlFor="password">Your Password:</label>
                 <input onBlur={handleOnBlur} type="password" name="password" required/>
+                <br />
+                
+                <label htmlFor="password">Re Write Your Password:</label>
+                <input onBlur={handleOnBlur} type="password" name="password2" required/>
                 <br /><br />
-                { isLoading && <Spinner animation="border" varient='success' /> } <br />
-                {user?.email && 
-                        <Alert variant="success">
-                        Register Successfully!!
-                        </Alert>}
-                        {authError && <Alert variant="danger">{authError}</Alert>}
+                
 
                 <button type="submit" className="register-button">Register</button>
                 <br />
                 
                 <br /> 
                 <NavLink to="/login"><button className="register-button">Already Registered? Login</button></NavLink>
-            </form>
+            </form>}
+
+            { isLoading && <Spinner animation="border" varient='success' /> } <br />
+                {user?.email && 
+                        <Alert variant="success">
+                        Register Successfully!!
+                        </Alert>}
+                        {authError && <Alert variant="danger">{authError}</Alert>}
             
         </div>
     );

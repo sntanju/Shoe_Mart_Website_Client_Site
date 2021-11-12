@@ -4,7 +4,6 @@ import './Reviews.css';
 
 const Reviews = () => {
     const [reviews, setReviews] = useState([]);
-    const size = 6;
 
     useEffect(() => {
         fetch('https://frozen-ravine-97726.herokuapp.com/reviews')
@@ -19,7 +18,7 @@ const Reviews = () => {
             <div className="reviews">
                 {
                         reviews.map(review => <Review
-                        key = {review._id}
+                        key = {review.id}
                         review={review}
                         ></Review>)
                 }

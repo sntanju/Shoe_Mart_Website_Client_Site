@@ -12,6 +12,7 @@ import ProductDetails from './pages/ProductDetails/ProductDetails';
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 import AuthProvider from './contexts/AuthProvider';
 import AddReviews from './pages/AddReviews/AddReviews';
+import AddProducts from './pages/AddProducts/AddProducts';
 
 
 function App() {
@@ -43,6 +44,10 @@ function App() {
 
           <PrivateRoute path="/dashboard">
             <Dashboard></Dashboard>
+          </PrivateRoute>
+
+          <PrivateRoute path="/addProducts">
+            <AddProducts></AddProducts>
           </PrivateRoute>
 
           <PrivateRoute path="/addReviews">

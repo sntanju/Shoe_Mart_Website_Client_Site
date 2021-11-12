@@ -1,0 +1,13 @@
+.add-products {
+    text-align: center;
+    margin: 10px 500px;
+    padding: 10px;
+}
+.add-products form {
+    border: 1px solid black;
+}
+.add-products input {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}

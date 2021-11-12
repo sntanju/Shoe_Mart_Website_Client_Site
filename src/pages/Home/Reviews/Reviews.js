@@ -30,5 +30,5 @@ const Reviews = () => {
 
 export default Reviews;
 
-// https://shoe-mart-website.web.app/
+
 

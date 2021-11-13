@@ -18,15 +18,18 @@ const Dashboard = () => {
         <div className="dashboard-link">
             <div>
             
-            {/* {admin && <div> */}
+            { admin && <div>
             <NavLink to={`${url}/manageAllOrders`} ><button>Manage All Orders</button></NavLink><br /> <br />
             <NavLink to={`${url}/addproducts`}><button>Add Products</button></NavLink><br /><br />
             <NavLink to={`${url}/makeAdmin`}><button>Make Admin</button></NavLink><br /><br />
-            {/* </div>} */}
-            
+            </div>}
+
+            { !admin && <div>
             <NavLink to={`${url}/myOrders`}><button>My Orders</button></NavLink><br /><br />
             <NavLink to={`${url}/addReviews`}><button>Reviews</button></NavLink><br /><br />
             <NavLink to={`${url}/pay`}><button>Pay</button></NavLink><br /> <br />
+            </div>}
+            
 
             <button onClick={logout}>LogOut</button>         
             </div>

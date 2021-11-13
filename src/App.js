@@ -11,9 +11,6 @@ import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 import AuthProvider from './contexts/AuthProvider';
-import AddReviews from './pages/AddReviews/AddReviews';
-import AddProducts from './pages/AddProducts/AddProducts';
-import ManageAllOrders from './pages/ManageAllOrders/ManageAllOrders';
 
 
 function App() {

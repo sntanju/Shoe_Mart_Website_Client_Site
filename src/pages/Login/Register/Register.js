@@ -17,6 +17,7 @@ const Register = () => {
         const newLoginData = { ...loginData };
         newLoginData[field] = value;
         setLoginData(newLoginData);
+        console.log(newLoginData)
     }
     const handleLoginSubmit = e => {
         if (loginData.password !== loginData.password2) {
@@ -35,19 +36,19 @@ const Register = () => {
                 <br />
 
                 <label htmlFor="name">Your Name:  </label> 
-                <input onBlur={handleOnBlur} type="text" name="name" required />
+                <input onBlur={handleOnBlur} type="text" name="name"  />
                 <br />
 
                 <label htmlFor="email">Your Email:  </label>
-                <input onBlur={handleOnBlur}type="text" name="email" required />
+                <input onBlur={handleOnBlur}type="text" name="email"  />
                 <br />
 
                 <label htmlFor="password">Your Password:</label>
-                <input onBlur={handleOnBlur} type="password" name="password" required/>
+                <input onBlur={handleOnBlur} type="password" name="password" />
                 <br />
                 
                 <label htmlFor="password">Re Write Your Password:</label>
-                <input onBlur={handleOnBlur} type="password" name="password2" required/>
+                <input onBlur={handleOnBlur} type="password" name="password2" />
                 <br /><br />
                 
 
@@ -63,7 +64,7 @@ const Register = () => {
                         <Alert variant="success">
                         Register Successfully!!
                         </Alert>}
-                        {authError && <Alert variant="danger">{authError}</Alert>}
+                        {/* {authError && <Alert variant="danger">{authError}</Alert>} */}
             
         </div>
     );

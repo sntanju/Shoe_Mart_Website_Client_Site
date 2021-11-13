@@ -33,7 +33,7 @@ const Navigation = () => {
                         <NavLink className="bg-info link-style" to="/login">Login</NavLink> 
                         }
                             <Navbar.Text>
-                                <p className="text-lignt m-3">{user?.displayName}</p>
+                                <p className="text-white m-2">{user?.displayName}</p>
                             </Navbar.Text>
                     </Nav>
                 </Navbar.Collapse>

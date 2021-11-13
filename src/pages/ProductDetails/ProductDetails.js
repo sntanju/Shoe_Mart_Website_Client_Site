@@ -41,7 +41,7 @@ const ProductDetails = () => {
     return (
         <div>
             <div className="user-info">
-            <h3>{user?.name}</h3>   
+            <h3>{user?.displayName}</h3>   
             <h5>{user?.email}</h5>
             </div>
 

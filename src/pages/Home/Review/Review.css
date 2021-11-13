@@ -9,3 +9,7 @@
 .review:hover{
     background-color:rgba(255, 235, 205, 0.692);
 }
+.star {
+    color: goldenrod;
+    font-size: 20px;
+}

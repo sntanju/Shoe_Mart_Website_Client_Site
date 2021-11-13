@@ -31,6 +31,7 @@ const AddReviews = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
                     <input {...register("img")} placeholder="Your Image" />
                     <input {...register("name")} placeholder="Your Name" />
+                    <input type="number" {...register("star")} placeholder="Rating" />
                     <input {...register("description")} placeholder="Description" />
                         <br />
                     <input type="submit" placeholder="Add"/>

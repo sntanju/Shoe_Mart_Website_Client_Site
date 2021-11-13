@@ -28,7 +28,7 @@ const Navigation = () => {
                         <div className="m-2">
                             <button className="bg-info link-style" onClick={logout}>LogOut</button>
                         </div> : 
-                        <NavLink className="bg-info link-style" to="/login">Login</NavLink> 
+                        <NavLink to="/login">Login</NavLink> 
                         }
                             <Navbar.Text>
                                 <p className="text-white m-2">{user?.displayName}</p>

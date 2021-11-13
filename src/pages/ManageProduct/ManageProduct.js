@@ -7,14 +7,14 @@ const ManageProduct = ({product}) => {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        fetch('https://frozen-ravine-97726.herokuapp.com/allOrders')
+        fetch('https://frozen-ravine-97726.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setUsers(data));
     }, []);
 
     const handleDelete = id => {
         alert("Are You Confirm To Delete?");
-        const url = `https://frozen-ravine-97726.herokuapp.com/allOrders/${id}`;
+        const url = `https://frozen-ravine-97726.herokuapp.com/products/${id}`;
         fetch(url, {
             method: 'DELETE'
         })
@@ -25,6 +25,7 @@ const ManageProduct = ({product}) => {
                 alert('Deleted Successfully');
                 const remaining = users.filter(product => product._id !== id);
                 setUsers(remaining);
+                window.location.reload();
             }
            
         })

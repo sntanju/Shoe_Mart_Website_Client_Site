@@ -8,10 +8,10 @@ const MyOrders = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        fetch('https://frozen-ravine-97726.herokuapp.com/allOrders')
+        fetch(`https://frozen-ravine-97726.herokuapp.com/allOrders?email=${user.email}`)
         .then(res => res.json())
         .then(data => setAllOrders(data))
-    } , [] );
+    } , [user.email] );
 
     return (
         <div>

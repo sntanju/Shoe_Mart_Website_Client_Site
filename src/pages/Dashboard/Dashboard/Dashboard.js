@@ -5,6 +5,7 @@ import AddProducts from '../../AddProducts/AddProducts';
 import AddReviews from '../../AddReviews/AddReviews';
 import MakeAdmin from '../../MakeAdmin/MakeAdmin';
 import ManageAllOrders from '../../ManageAllOrders/ManageAllOrders';
+import ManageProducts from '../../ManageProducts/ManageProducts';
 import MyOrders from '../../MyOrders/MyOrders';
 import Payment from '../../Payment/Payment';
 import './Dashboard.css';
@@ -20,6 +21,7 @@ const Dashboard = () => {
             
             { admin && <div>
             <NavLink to={`${url}/manageAllOrders`} ><button>Manage All Orders</button></NavLink><br /> <br />
+            <NavLink to={`${url}/manageProducts`}><button>Manage Product</button></NavLink><br /><br />
             <NavLink to={`${url}/addproducts`}><button>Add Products</button></NavLink><br /><br />
             <NavLink to={`${url}/makeAdmin`}><button>Make Admin</button></NavLink><br /><br />
             </div>}
@@ -39,6 +41,9 @@ const Dashboard = () => {
 
                     <Route exact path={`${path}/manageAllOrders`}>
                         <ManageAllOrders></ManageAllOrders>
+                    </Route>
+                    <Route exact path={`${path}/manageProducts`}>
+                        <ManageProducts></ManageProducts>
                     </Route>
                     <Route exact path={`${path}/addproducts`}>
                         <AddProducts></AddProducts>

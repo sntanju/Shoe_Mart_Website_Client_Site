@@ -9,23 +9,22 @@ const Navigation = () => {
     const {user, logout} = useAuth();
 
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sm={12} xs={12}>
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sm={12} xs={12} >
             <Container>
                 
                 <Navbar.Brand ><img className= "logo" src="https://www.designfreelogoonline.com/wp-content/uploads/2021/02/000764-Shoes-02.png" alt="" /></Navbar.Brand>
                 <Navbar.Brand > Shoe Mart </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="me-auto">
-
-                    </Nav>
+                    <Nav className="me-auto"> </Nav>
 
                     <Nav className="link-style">
                         <NavLink to="/home">Home</NavLink>
                         <NavLink to="/allproducts">Products</NavLink>
                         <NavLink to="/register">Register</NavLink>
                         
-                        {user?.email ? 
+                        {
+                        user?.email ? 
                         <div className="m-2">
                             <NavLink to="/dashboard">Dashboard</NavLink> 
                             <button className="bg-info link-style" onClick={logout}>LogOut</button>

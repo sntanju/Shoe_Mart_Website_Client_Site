@@ -60,7 +60,7 @@ const ProductDetails = () => {
                     <input {...register("address")} placeholder="Address" />
                     <input {...register("product")} placeholder="Product Name" />
                     <input type="number" {...register("phone")} placeholder="Phone" />
-                        <br />
+                    <br />
                     <input type="submit" placeholder="Order"/>
                 </form>
                 </div>

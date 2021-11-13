@@ -13,6 +13,7 @@ const useFirebase = () => {
 
     const auth = getAuth();
 
+    // handle register user
     const registerUser = (email, password, name, history) => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
@@ -36,6 +37,7 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
+    //handle login user
     const loginUser = (email, password, location, history) => {
         setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
@@ -69,6 +71,7 @@ const useFirebase = () => {
             .then(data => setAdmin(data.admin))
     }, [user.email])
 
+    // handle logout
     const logout = () => {
         setIsLoading(true);
         signOut(auth).then(() => {
@@ -79,6 +82,7 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
+    // save user to database
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
         fetch('https://frozen-ravine-97726.herokuapp.com/users', {

@@ -12,20 +12,22 @@ import ProductDetails from './pages/ProductDetails/ProductDetails';
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 import AuthProvider from './contexts/AuthProvider';
 
-
 function App() {
   return (
     <div className="App">
       <AuthProvider>
       <Router>
-        <Navigation></Navigation>
+        <Navigation></Navigation>        
         <Switch>
+
           <Route exact path="/">
               <Home></Home>
           </Route>
+
           <Route exact path="/home">
               <Home></Home>
           </Route>
+
           <Route exact path="/allproducts">
               <AllProducts></AllProducts>
           </Route>
@@ -33,9 +35,11 @@ function App() {
           <Route exact path="/login">
               <Login></Login>
           </Route>
+
           <Route exact path="/register">
               <Register></Register>
           </Route>
+
           <PrivateRoute path="/productdetails/:id">
             <ProductDetails></ProductDetails>
           </PrivateRoute>
@@ -47,9 +51,10 @@ function App() {
           <Route exact path="*">
               <NotFound></NotFound>
           </Route>
-        </Switch>
+
+         </Switch>
         <Footer></Footer>
-      </Router>
+       </Router>
       </AuthProvider>
     </div>
   );

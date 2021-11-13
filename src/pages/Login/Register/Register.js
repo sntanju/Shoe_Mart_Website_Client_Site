@@ -64,7 +64,7 @@ const Register = () => {
                         <Alert variant="success">
                         Register Successfully!!
                         </Alert>}
-                        {/* {authError && <Alert variant="danger">{authError}</Alert>} */}
+                        {authError && <Alert variant="danger">{authError}</Alert>}
             
         </div>
     );

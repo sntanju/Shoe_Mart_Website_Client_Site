@@ -11,7 +11,6 @@ const Reviews = () => {
         .then(data => setReviews(data))
     } ,[]);
 
-
     return (
         <div>
             <h2 className="text-success m-2 p-3" >Our Customers Reviews</h2>

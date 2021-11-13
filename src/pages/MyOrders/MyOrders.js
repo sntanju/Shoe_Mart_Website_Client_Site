@@ -1,9 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import useAuth from '../../hooks/useAuth';
+import MyOrder from '../MyOrder/MyOrder';
 
 const MyOrders = () => {
+
+    const [allOrders, setAllOrders] = useState([]);
+    const { user } = useAuth();
+
+    useEffect(() => {
+        fetch(`https://frozen-ravine-97726.herokuapp.com/allOrders/${user?.email}`)
+        .then(res => res.json())
+        .then(data => setAllOrders(data))
+    } , [user?.email] );
+
     return (
-        <div style={{marginLeft:'400', marginTop:'200'}}>
-            <h2>My Orders</h2>
+        <div>
+             <h4 style={{marginLeft: '300px', color: 'red'}}>My Order</h4>
+           <div >
+           {
+                    allOrders.map(allOrder => <MyOrder
+                    key = {allOrder._id}
+                    allOrder={allOrder}
+                    ></MyOrder>)
+            }
+           </div>
         </div>
     );
 };

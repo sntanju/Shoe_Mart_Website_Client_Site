@@ -5,10 +5,9 @@ import './AllProducts.css';
 const AllProducts = () => {
 
     const [products, setProducts] = useState([]);
-    const size = 13;
 
     useEffect(() => {
-        fetch(`https://frozen-ravine-97726.herokuapp.com/products?size=${size}`)
+        fetch('https://frozen-ravine-97726.herokuapp.com/products')
         .then(res => res.json())
         .then(data => setProducts(data))
     } ,[]);

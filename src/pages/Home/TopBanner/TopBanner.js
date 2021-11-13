@@ -6,8 +6,7 @@ const TopBanner = () => {
     return (
         <div>
             <h2 className="web-name ">Welcome To Shoe Mart</h2>
-            <Container fluid>
-                
+            <Container fluid>              
                 <Row className="top-banner">
                     <Col xs={12} sm={12} md={6} lg={6}>
                         <img src="https://allthatsinteresting.com/wordpress/wp-content/uploads/2013/04/History-of-Shoes-Pile-of-Shoes.jpg" alt="" />
@@ -17,9 +16,7 @@ const TopBanner = () => {
                         <p>Here you will get the most beautiful, latest and the popular shoes of<br/> the world.So come here and buy the shoe as you like.<br/> We maintain the quality of our products.</p>
                         <Button variant="success" size="lg" className="text-light">Details</Button>
                     </Col>
-
-                </Row>
-                
+                </Row>                
             </Container>
         </div>
     );

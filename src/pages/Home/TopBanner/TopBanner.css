@@ -11,6 +11,9 @@
 .top-banner {
     background-color: rgba(236, 230, 165, 0.781);
 }
+.top-banner img {
+    width: 100%;
+}
 .top-banner h2 {
     justify-content: center;
     margin-top: 60px;

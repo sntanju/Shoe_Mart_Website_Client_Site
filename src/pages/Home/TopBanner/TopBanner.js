@@ -5,7 +5,10 @@ import './TopBanner.css';
 const TopBanner = () => {
     return (
         <div>
-            <h2 className="web-name ">Welcome To Shoe Mart</h2>
+            <Col xs={12} sm={12} md={12} lg={12} className="web-name ">
+            Welcome To Shoe Mart
+            </Col>
+            
             <Container fluid>              
                 <Row className="top-banner">
                     <Col xs={12} sm={12} md={6} lg={6}>

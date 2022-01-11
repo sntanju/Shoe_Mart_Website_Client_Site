@@ -1,13 +1,14 @@
 import React from 'react';
 import './Review.css';
 import Rating from 'react-rating';
+import { Col } from 'react-bootstrap';
 
 const Review = ({review}) => {
 
     const {description, name, img, star} = review || {};
 
     return (
-        <div className="review">
+        <Col className="review" xs={12} sm={12} md={6} lg={4}>
              <img src={img} alt="" />
             <div className="product-info">
             <h2>{name}</h2>
@@ -20,7 +21,7 @@ const Review = ({review}) => {
             <p className="p-2">{description}</p>
             </div>
 
-        </div>
+        </Col>
     );
 };
 export default Review;

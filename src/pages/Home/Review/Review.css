@@ -1,10 +1,16 @@
 .review {
-    margin: 15px;
-    padding: 5px;
+    margin: 30px;
     border: 1px solid white;
     border-radius: 10px;
+    height: 450px;
+    width: 305px;
     color:midnightblue;
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.596);
+}
+.review img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
 }
 .review:hover{
     background-color:rgba(255, 235, 205, 0.692);

@@ -1,4 +1,14 @@
 .admin {
-    margin-top: 40px;
-    margin-left: 300px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.makeAdminSubmit {
+    border: 1px solid green;
+    border-radius: 3px;
+    padding: 10px 50px;
+    font-size: 20px;
+    font-weight: 700;
+}
+.makeAdminSubmit:hover {
+    background-color: black;
 }

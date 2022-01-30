@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Container, Row } from 'react-bootstrap';
 import ManageProduct from '../ManageProduct/ManageProduct';
 import './ManageProducts.css';
 
@@ -14,17 +15,17 @@ const ManageProducts = () => {
 
 
     return (
-        <div>
-            <h2 style={{marginLeft: 350}}>Manage Products</h2>
-            <div className="manage-products">
+        <Container>
+            <h2 className='my-5'>Manage Products</h2>
+            <Row xs={1} sm={1} md={2} lg={3}>
                 {
                         products.map(product => <ManageProduct
                         key = {product.id}
                         product={product}
                         ></ManageProduct>)
                 }
-            </div>
-        </div>
+            </Row>
+        </Container>
     );
 };
 

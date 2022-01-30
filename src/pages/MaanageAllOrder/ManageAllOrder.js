@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Col } from 'react-bootstrap';
 import './ManageAllOrder.css';
 
 
@@ -32,16 +33,16 @@ const ManageAllOrder = ({allOrder}) => {
     }
 
     return (
-        <div className="all-order">
-            <div>
+        <Col className="all-order" xm={12} sm={12} md={6} lg={3}>
+            
             <h5><b>Name: </b>{name}</h5>
             <h5><b>Address: </b>{address}</h5>
             <h5><b>Product Name: </b>{product}</h5>
             <h5><b>Phone Number: </b>{phone}</h5>
             <button onClick={ () => handleDelete(allOrder._id)} >Delete</button>
             
-            </div>
-        </div>
+            
+        </Col>
     );
 };
 

@@ -1,7 +1,9 @@
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { Col } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
+import './AllProduct.css';
 
 
 const AllProduct = ({product}) => {
@@ -15,14 +17,15 @@ const AllProduct = ({product}) => {
 
     } 
     return (
-        <div className="product">
-           <img src={img} alt="" />
-            <div className="product-info">
+
+        <div >
+        <Col className="all-card my-5">
+            <img src={img} alt="" />
             <h2>{name}</h2>
             <p className="p-2">{description}</p>
             <h4><b>Price: ${price}</b></h4>
             <button onClick={ () => handleDetails(id)}  > {shoppingcartIcon} Buy Now</button>
-            </div>
+        </Col>
         </div>
     );
 };

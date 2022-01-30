@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Container, Row } from 'react-bootstrap';
 import ManageAllOrder from '../MaanageAllOrder/ManageAllOrder';
 
 const ManageAllOrders = () => {
@@ -14,17 +15,17 @@ const ManageAllOrders = () => {
 
 
     return (
-        <div>
-            <h4 style={{marginLeft: '300px'}}>Order Of All The Customer</h4>
-           <div >
+        <Container>
+            <h2 className='my-4 text-danger'>Order Of All The Customer</h2>
+           <Row>
            {
                     allOrders.map(allOrder => <ManageAllOrder
                     key = {allOrder._id}
                     allOrder={allOrder}
                     ></ManageAllOrder>)
             }
-           </div>
-        </div>
+           </Row>
+        </Container>
     );
 };
 

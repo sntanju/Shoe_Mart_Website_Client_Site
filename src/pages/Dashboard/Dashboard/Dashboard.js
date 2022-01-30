@@ -1,4 +1,5 @@
 import React from 'react';
+import { Col, Row, Container } from 'react-bootstrap';
 import { Switch, Route, useRouteMatch, NavLink  } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import AddProducts from '../../AddProducts/AddProducts';
@@ -16,27 +17,29 @@ const Dashboard = () => {
     const { admin, logout } = useAuth();
 
     return (
-        <div className="dashboard-link">
-            <div>
+        <Container className="dashboard-link">
+            <Row>
             
-            { admin && <div>
-            <NavLink to={`${url}/manageAllOrders`} ><button>Manage All Orders</button></NavLink><br /> <br />
-            <NavLink to={`${url}/manageProducts`}><button>Manage Product</button></NavLink><br /><br />
-            <NavLink to={`${url}/addproducts`}><button>Add Products</button></NavLink><br /><br />
-            <NavLink to={`${url}/makeAdmin`}><button>Make Admin</button></NavLink><br /><br />
-            </div>}
+            { admin && <Col >
+            <NavLink to={`${url}/manageAllOrders`} xm={12} sm={12} md={2} lg={2} ><button  className=" mx-2 my-2 ">Manage All Orders</button></NavLink>
+            <NavLink to={`${url}/manageProducts`}  xm={12} sm={12} md={2} lg={2}><button className=" mx-2 my-2">Manage Product</button></NavLink>
+            <NavLink to={`${url}/addproducts`}  xm={12} sm={12} md={2} lg={2}><button className=" mx-2 my-2">Add Products</button></NavLink>
+            <NavLink to={`${url}/makeAdmin`}  xm={12} sm={12} md={2} lg={2}><button className=" mx-2 my-2">Make Admin</button></NavLink>
+            </Col>}
 
-            { !admin && <div>
-            <NavLink to={`${url}/myOrders`}><button>My Orders</button></NavLink><br /><br />
-            <NavLink to={`${url}/addReviews`}><button>Reviews</button></NavLink><br /><br />
-            <NavLink to={`${url}/pay`}><button>Pay</button></NavLink><br /> <br />
-            </div>}
+            { !admin && <Col xm={8} sm={8} md={8} lg={8} >
+            <NavLink to={`${url}/myOrders`}><button className=" mx-2 ">My Orders</button></NavLink>
+            <NavLink to={`${url}/addReviews`}><button className=" mx-2 ">Reviews</button></NavLink>
+            <NavLink to={`${url}/pay`}><button className=" mx-2 ">Pay</button></NavLink>
+            </Col>}
             
+            <Col xm={4} sm={4} md={4} lg={4}>
+            <button  className=" my-2 " onClick={logout}>LogOut</button>  
+            </Col>
+                
+            </Row>
 
-            <button onClick={logout}>LogOut</button>         
-            </div>
-
-                <div>
+                <Col>
                 <Switch>
 
                     <Route exact path={`${path}/manageAllOrders`}>
@@ -63,8 +66,8 @@ const Dashboard = () => {
                     </Route>
 
                 </Switch>
-                </div>
-        </div>
+                </Col>
+        </Container>
     );
 };
 

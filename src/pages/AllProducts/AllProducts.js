@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Container, Row } from 'react-bootstrap';
 import AllProduct from '../AllProduct/AllProduct';
 import './AllProducts.css';
 
@@ -14,17 +15,20 @@ const AllProducts = () => {
 
 
     return (
-        <div>
-            <h2 className=" bg-info m-0 p-3 text-light">All Of Our Products</h2>
-            <div className="all-products">
-                {
+
+        <Container>
+            
+            <h2 className=" all-products ">All Of Our Products</h2>
+             <Row xs={1} sm={1} md={2} lg={2}>
+             {
                         products.map(product => <AllProduct
                         key = {product.id}
                         product={product}
                         ></AllProduct>)
-                }
-            </div>
-        </div>
+             }
+            </Row>
+        </Container>
+
     );
 };
 

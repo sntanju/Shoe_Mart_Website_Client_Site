@@ -1,4 +1,5 @@
 import React, {useState, useEffect } from 'react';
+import { Col, Row } from 'react-bootstrap';
 import './ManageProduct.css';
 
 const ManageProduct = ({product}) => {
@@ -31,16 +32,15 @@ const ManageProduct = ({product}) => {
         })
     }
 
-    return (
-        <div className="manage-product">
-           <img src={img} alt="" />
-            <div className="product-info">
-            <h2>{name}</h2>
-            <p className="p-2">{description}</p>
-            <h4><b>Price: ${price}</b></h4>
-            <button onClick={ () => handleDelete(product._id)}  > Delete </button>
-            </div>
-        </div>
+    return (        
+            <Col className="manage-product my-5" >
+                <img src={img} alt="" /> 
+                <h2>{name}</h2>
+                <p className="p-2">{description}</p>
+                <h4><b>Price: ${price}</b></h4>
+                <button onClick={ () => handleDelete(product._id)}  > Delete </button>
+                
+            </Col>
     );
 };
 

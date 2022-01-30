@@ -1,15 +1,24 @@
 .register {   
-    margin: 30px 450px ;
     padding: 20px;
-    border: 1px solid gray;
+    background-color:darkolivegreen;
+    
 }
 .register input {
-    margin: 10px;
+    margin: 10px; 
+    justify-content: left;
+    align-items: flex-start;
+}
+.register label {
+    text-align: left;
 }
 .register-button {
-    background-color:rgba(64, 224, 208, 0.767);
+    background-color:white;
     color:maroon;
     margin: 10px;
     padding: 10px;
     border-radius: 5px;
+}
+.register-button:hover {
+    color: white;
+    background-color: black;
 }

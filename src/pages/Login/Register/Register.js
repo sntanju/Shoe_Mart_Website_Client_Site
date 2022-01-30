@@ -1,5 +1,5 @@
 import { NavLink, useHistory } from 'react-router-dom';
-import { Alert, Spinner } from 'react-bootstrap';
+import { Alert, Col, Container, Row, Spinner } from 'react-bootstrap';
 import React, { useState } from 'react';
 import './Register.css';
 import useAuth from '../../../hooks/useAuth';
@@ -30,7 +30,10 @@ const Register = () => {
         
 
     return (
-        <div className="register bg-success text-light">
+        <Container>
+           <Row>
+               <Col xs={0} sm={0} md={0} lg={3}></Col>
+               <Col xs={12} sm={12} md={12} lg={6} className="register text-light my-3">
             { !isLoading && <form onSubmit={handleLoginSubmit}>
                 <h3>Please Register</h3>
                 <br />
@@ -59,14 +62,17 @@ const Register = () => {
                 <NavLink to="/login"><button className="register-button">Already Registered? Login</button></NavLink>
             </form>}
 
-            { isLoading && <Spinner animation="border" varient='success' /> } <br />
+                { isLoading && <Spinner animation="border" varient='success' /> } <br />
                 {user?.email && 
                         <Alert variant="success">
                         Register Successfully!!
                         </Alert>}
                         {authError && <Alert variant="danger">{authError}</Alert>}
             
-        </div>
+                        </Col>
+               <Col xs={0} sm={0} md={0} lg={3}></Col>
+           </Row>
+       </Container>
     );
 };
 

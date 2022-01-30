@@ -1,14 +1,9 @@
 .dashboard-link a {
     text-decoration:none;
-    font-size: 20px;
-    
-    
+    font-size: 20px;  
 }
-.dashboard-link {
-    display: flex;
-    text-align: left;
-    margin: 30px;
-    padding: 20px;
+.dashboard-link {   
+    margin: 10px; 
 }
 .dashboard-link button {
     background-color:olivedrab;
@@ -17,3 +12,4 @@
     border: 1px solid green;
     border-radius: 5px;
 }
+

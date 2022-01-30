@@ -3,6 +3,7 @@ import axios from 'axios';
 import useAuth from '../../hooks/useAuth';
 import { useParams } from 'react-router';
 import { useForm } from "react-hook-form";
+import { Container, Row, Col } from 'react-bootstrap';
 import './ProductDetails.css';
 
 const ProductDetails = () => {
@@ -39,35 +40,42 @@ const ProductDetails = () => {
     
 
     return (
-        <div>
-            <div className="user-info">
+        <Container>
+            <Row>
+            <Col className="user-info" sm={12} md={12} lg={12} xm={12}>
             <h3>{user?.displayName}</h3>   
             <h5>{user?.email}</h5>
-            </div>
+            </Col>
 
-            <div className="booking">
-                <div className="booking-info">
+
+            
+                <Col className="booking-info  my-5" sm={12} md={12} lg={5} xm={12}>
                     <img src={singleDetails?.img} alt="" />
                     <h2> {singleDetails?.name}</h2>
                     <p>{singleDetails?.description}</p>
                     <h4>Price: {singleDetails?.price}</h4>
-                </div>
+                </Col>
 
-                <div className="input-form">
+                <Col sm={0} md={0} lg={2} xm={0}></Col>
+
+                <Col className="input-form my-5" sm={12} md={12} lg={5} xm={12}>
                 <form onSubmit={handleSubmit(onSubmit)}>
                 
-                    <input {...register("name")} placeholder=" Name" />
-                    <input {...register("address")} placeholder="Address" />
-                    <input {...register("product")} placeholder="Product Name" />
-                    <input type="number" {...register("phone")} placeholder="Phone" />
-                    <br />
-                    <input type="submit" placeholder="Order"/>
-                </form>
-                </div>
-            </div>
+                    <Col sm={12} md={12} lg={12} xm={12}><input {...register("name")} placeholder=" Name" /></Col>
 
-            
-        </div>
+                    <Col sm={12} md={12} lg={12} xm={12}><input {...register("address")} placeholder="Address" /></Col>
+
+                    <Col sm={12} md={12} lg={12} xm={12}><input {...register("product")} placeholder="Product Name" /></Col>
+
+                    <Col><input type="number" {...register("phone")} placeholder="Phone" /></Col>
+                    <br />
+                    <Col sm={12} md={12} lg={12} xm={12} ><input className="submit" type="submit" placeholder="Order Now"/></Col>
+                </form>
+                </Col>
+           
+
+            </Row>
+        </Container>
     );
 };
 

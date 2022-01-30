@@ -17,9 +17,14 @@
     color: magenta;
 }
 .not-found button {
+    font-size: 20px;
     background-color: teal;
     color: white;
     padding: 10px;
     margin: 10px;
     border-radius: 8px;
+}
+.not-found button:hover {
+    background-color: black;
+    color: white;
 }

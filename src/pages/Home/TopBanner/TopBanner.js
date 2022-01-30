@@ -16,7 +16,7 @@ const TopBanner = () => {
                     </Col>
                     <Col xs={12} lg={6} md={6} >
                         <h2>Choose The Best Shoe </h2>
-                        <p>Here you will get the most beautiful, latest and the popular shoes of<br/> the world.So come here and buy the shoe as you like.<br/> We maintain the quality of our products.</p>
+                        <p>Here you will get the most beautiful, latest and the popular shoes of the world.So come <br /> here and buy the shoe as you like. We maintain the quality of our products.</p>
                         <Button variant="success" size="lg" className="text-light">Details</Button>
                     </Col>
                 </Row>                

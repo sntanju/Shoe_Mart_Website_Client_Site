@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Alert } from 'react-bootstrap';
+import { Alert, Col } from 'react-bootstrap';
 import './MakeAdmin.css';
 
 const MakeAdmin = () => {
@@ -31,18 +31,19 @@ const MakeAdmin = () => {
         e.preventDefault()
         }
     return (
-        <div className="admin">
-             <h2>Make an Admin</h2>
+        <Col className="admin" xm={12} sm={12} md={12} lg={12}>
+             <h2 className='my-3'>Make an Admin</h2>
             <form onSubmit={handleAdminSubmit}>
                 <input
+                    placeholder='Users Email'
                     label="Email"
                     type="email"
                     onBlur={handleOnBlur}
                     variant="standard" /> <br /><br />
-                <button type="submit" variant="contained">Make Admin</button>
+                <button type="submit" variant="contained" className='makeAdminSubmit'>Make Admin</button>
             </form>
             {success && <Alert variant="success">Made Admin successfully!</Alert>}
-        </div>
+        </Col>
     );
 };
 
